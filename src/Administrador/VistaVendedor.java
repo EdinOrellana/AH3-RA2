@@ -80,6 +80,8 @@ public class VistaVendedor extends javax.swing.JInternalFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
 
+        setClosable(true);
+
         jPanel1.setBackground(new java.awt.Color(0, 204, 204));
 
         jLabel1.setText("jLabel1");

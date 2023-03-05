@@ -19,7 +19,7 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
-        cargarLogin();
+ cargarLogin();
   
     }
     VistaLogin loginVista=new VistaLogin();
@@ -29,6 +29,7 @@ public class Principal extends javax.swing.JFrame {
          Escritorio.add(loginVista);
          loginVista.show();
             loginVista.setVisible(true);
+            Bandera=false;
    }  
 
       
@@ -46,6 +47,12 @@ public class Principal extends javax.swing.JFrame {
         Escritorio = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        Escritorio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                EscritorioMouseEntered(evt);
+            }
+        });
 
         javax.swing.GroupLayout EscritorioLayout = new javax.swing.GroupLayout(Escritorio);
         Escritorio.setLayout(EscritorioLayout);
@@ -72,6 +79,13 @@ public class Principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void EscritorioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EscritorioMouseEntered
+if(Bandera){
+cargarLogin();
+
+}// TODO add your handling code here:
+    }//GEN-LAST:event_EscritorioMouseEntered
+public static boolean Bandera=true;
 
     /**
      * @param args the command line arguments

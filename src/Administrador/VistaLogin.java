@@ -27,6 +27,7 @@ public class VistaLogin extends javax.swing.JInternalFrame {
     }
     Administrador.VistaAdmin vistaAdmin=new Administrador.VistaAdmin();
     Modificar_GuardarVentas VistaVendedor=new Modificar_GuardarVentas();
+    VistaVendedor Vistaven=new VistaVendedor();
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -116,6 +117,15 @@ public class VistaLogin extends javax.swing.JInternalFrame {
          Escritorio.add(vistaAdmin);
          vistaAdmin.show();
          vistaAdmin.setVisible(true);
+    }else{
+        for(Modelo ap: Modelo.datos){
+            if(((jtflContra.getText().trim()).equals(ap.getPassword()))&&(jtflUsuario.getText().trim().equals(ap.getNombre()))){
+                 Escritorio.remove(this);
+         Escritorio.add(Vistaven);
+         Vistaven.show();
+         Vistaven.setVisible(true);
+            }
+        }
     }
             
     }//GEN-LAST:event_btnIniciarsesionActionPerformed
